@@ -1,0 +1,40 @@
+<!--Use template literals to create a greeting message for a user based on their name and age. 
+  Display the message in the console.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS String Templates</title>
+</head>
+<body>
+  <h1>Greeting Message</h1>
+  <input id="input-name" type="text" placeholder="Enter your name">
+  <input id="input-age" type="number" placeholder="Enter your age">
+  <button id="generate-greeting-button">Generate Greeting</button>
+
+  <script>
+    // Get the input fields and button
+    let nameField = document.getElementById("input-name");
+    let ageField = document.getElementById("input-age");
+    let generateGreetingButton = document.getElementById("generate-greeting-button");
+
+    // Function to generate the greeting message
+    function generateGreeting(name, age) {
+      // Use template literals to create the greeting message
+      let greetingMessage = `Hello, ${name}! You are ${age} years old.`;
+
+      // Display the message in the console
+      console.log(greetingMessage);
+    }
+
+    // Add an event listener to the button
+    generateGreetingButton.addEventListener("click", function() {
+      // Get the input name and age
+      let name = nameField.value;
+      let age = ageField.value;
+
+      // Generate the greeting message
+      generateGreeting(name, age);
+    });
+  </script>
+</body>
+</html>

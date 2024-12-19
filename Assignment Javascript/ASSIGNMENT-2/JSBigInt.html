@@ -1,0 +1,63 @@
+<!--Create a program that uses BigInt to handle large integers, such as factorial calculations. 
+Compare performance with regular number calculations.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS BigInt</title>
+</head>
+<body>
+  <h1>BigInt Factorial</h1>
+  <input id="input-number" type="number" placeholder="Enter a number">
+  <button id="calculate-factorial-button">Calculate Factorial</button>
+  <div id="output"></div>
+
+  <script>
+    // Get the input field, button, and output element
+    let inputField = document.getElementById("input-number");
+    let calculateFactorialButton = document.getElementById("calculate-factorial-button");
+    let outputElement = document.getElementById("output");
+
+    // Function to calculate the factorial using regular numbers
+    function calculateFactorialRegular(num) {
+      let result = 1;
+      for (let i = 2; i <= num; i++) {
+        result *= i;
+      }
+      return result;
+    }
+
+    // Function to calculate the factorial using BigInt
+    function calculateFactorialBigInt(num) {
+      let result = 1n;
+      for (let i = 2n; i <= num; i++) {
+        result *= i;
+      }
+      return result;
+    }
+
+    // Add an event listener to the button
+    calculateFactorialButton.addEventListener("click", function() {
+      // Get the input number
+      let inputNum = parseInt(inputField.value);
+
+      // Calculate the factorial using regular numbers
+      let startTimeRegular = performance.now();
+      let resultRegular = calculateFactorialRegular(inputNum);
+      let endTimeRegular = performance.now();
+      let timeRegular = endTimeRegular - startTimeRegular;
+
+      // Calculate the factorial using BigInt
+      let startTimeBigInt = performance.now();
+      let resultBigInt = calculateFactorialBigInt(inputNum);
+      let endTimeBigInt = performance.now();
+      let timeBigInt = endTimeBigInt - startTimeBigInt;
+
+      // Display the results
+      outputElement.innerHTML = `
+        <p>Regular calculation: ${resultRegular} (took ${timeRegular}ms)</p>
+        <p>BigInt calculation: ${resultBigInt} (took ${timeBigInt}ms)</p>
+      `;
+    });
+  </script>
+</body>
+</html>

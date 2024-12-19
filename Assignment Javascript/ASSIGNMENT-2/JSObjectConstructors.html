@@ -1,0 +1,39 @@
+<!--Implement a constructor function for creating Employee objects. 
+Include properties for name, position, and salary, and a method to display employee information.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Object Constructors</title>
+</head>
+<body>
+    <h1>Employee Object</h1>
+    <div id="employee-details"></div>
+
+    <script>
+        // Constructor function for creating Employee objects
+        function Employee(name, position, salary) {
+            this.name = name;
+            this.position = position;
+            this.salary = salary;
+
+            // Method to display employee information
+            this.displayEmployeeInfo = function() {
+                return `Name: ${this.name}, Position: ${this.position}, Salary: $${this.salary}`;
+            };
+        }
+
+        // Create an Employee object
+        let employee = new Employee("John Doe", "Software Engineer", 80000);
+
+        // Function to display employee details
+        function displayEmployeeDetails(employee) {
+            document.getElementById("employee-details").innerHTML = employee.displayEmployeeInfo();
+        }
+
+        // Display employee details
+        displayEmployeeDetails(employee);
+    </script>
+</body>
+</html>

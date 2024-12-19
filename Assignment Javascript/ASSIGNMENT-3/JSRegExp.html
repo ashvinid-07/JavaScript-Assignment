@@ -1,0 +1,37 @@
+<!--Write a function that validates an email address using a regular expression.
+Create a program that extracts all the digits from a given string using a regular expression.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS RegExp</title>
+</head>
+<body>
+    <h1>Email Validation and Digit Extraction</h1>
+  <script>
+    function validateEmail(email) {
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/;
+      return emailRegex.test(email);
+    }
+
+    // Test the function
+    let email = "example@example.com";
+    if (validateEmail(email)) {
+      console.log(`${email} is a valid email address.`);
+    } else {
+      console.log(`${email} is not a valid email address.`);
+    }
+
+    function extractDigits(str) {
+      const digitRegex = /\d+/g;
+      return str.match(digitRegex);
+    }
+
+    // Test the function
+    let str = "Hello, my phone number is 123-456-7890.";
+    let digits = extractDigits(str);
+    console.log(`Extracted digits: ${digits}`); // Output: Extracted digits: 123,456,7890
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!--Create an HTML page with a JavaScript script that displays the properties of an object on the 
+page using DOM manipulation. Use a person object with properties like name, age, and occupation.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Object Display</title>
+</head>
+<body>
+  <h1>JS Display</h1>
+  <div id="person-details"></div>
+
+  <script>
+        // Create a Person object
+        let person = {
+            name: "John Doe",
+            age: 30,
+            occupation: "Software Engineer"
+        };
+
+        // Function to display person details
+        function displayPersonDetails(person) {
+            let personDetailsHTML = `
+                <p><b>Name:</b> ${person.name}</p>
+                <p><b>Age:</b> ${person.age}</p>
+                <p><b>Occupation:</b> ${person.occupation}</p>
+            `;
+            document.getElementById("person-details").innerHTML = personDetailsHTML;
+        }
+
+        // Display person details
+        displayPersonDetails(person);
+  </script>
+</body>
+</html>

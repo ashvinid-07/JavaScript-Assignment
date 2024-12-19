@@ -1,0 +1,48 @@
+<!--Create a program that counts the number of vowels in a given string. 
+Utilize string methods such as .toLowerCase(), .split(), and .filter().-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS String Methods</title>
+</head>
+<body>
+  <h1>Vowel Counter</h1>
+  <input id="input-string" type="text" placeholder="Enter a string">
+  <button id="count-vowels-button">Count Vowels</button>
+  <div id="output"></div>
+
+  <script>
+        // Get the input field, button, and output element
+        let inputField = document.getElementById("input-string");
+        let countVowelsButton = document.getElementById("count-vowels-button");
+        let outputElement = document.getElementById("output");
+
+        // Function to count the number of vowels in a string
+        function countVowels(str) {
+            // Convert the string to lowercase
+            str = str.toLowerCase();
+
+            // Split the string into an array of characters
+            let charArray = str.split("");
+
+            // Filter the array to only include vowels
+            let vowels = charArray.filter(char => "aeiou".includes(char));
+
+            // Return the number of vowels
+            return vowels.length;
+        }
+
+        // Add an event listener to the button
+        countVowelsButton.addEventListener("click", function() {
+            // Get the input string
+            let inputStr = inputField.value;
+
+            // Count the number of vowels
+            let vowelCount = countVowels(inputStr);
+
+            // Display the result
+            outputElement.innerHTML = `Number of vowels: ${vowelCount}`;
+        });
+  </script>
+</body>
+</html>

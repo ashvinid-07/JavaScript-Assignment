@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Let vs Var Example</title>
+</head>
+<body>
+    <h1>JavaScript Var vs Let Demostration</h1>
+    <button onclick="testScope()">Test Scope</button>
+
+    <script>
+        function testScope() {
+
+            var a = "Hello from var"; // Function Scope
+            let b = "Hello from let"; // Block Scope
+
+            document.write("Inside function:","<br>");
+            document.write("greetingVar:" +a,"<br>");
+            document.write("greetingLet:" +b,"<br>");
+
+            if(true){
+                var a = "Var:Inside block";
+                let b = "Let:Inside block";
+
+                document.write("Inside block:","<br>");
+                document.write("greetingVar:" +a,"<br>");
+                document.write("greetingLet:" +b,"<br>");
+            }
+            document.write("Outside block:","<br>");
+            document.write("greetingVar:" +a,"<br>");
+            document.write("greetingLet:" +b,"<br>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!--Write a program that runs both in strict mode and without strict mode. Demonstrate key differences, such as assignment to undeclared variables and this in global functions. Include at least 3 differences.
+Deliverable: Provide two versions of the code (strict and non-strict) and explain the errors/warnings that occur in strict mode.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Strict Mode</title>
+</head>
+<body>
+    <h1>Strict Mode Demo</h1>
+    <p id="result"></p>
+    <script>
+        // Get the result element
+        let result = document.getElementById("result");
+        
+        // Assignment to undeclared variable
+        x = 10;
+        result.innerHTML += "x = " + x + "<br>";
+        
+        // this in global function
+        function globalFunction() {
+          result.innerHTML += "this in global function: " + this + "<br>";
+        }
+        globalFunction();
+        
+        // Deleting a variable
+        var y = 20;
+        delete y;
+        result.innerHTML += "y after delete: " + y + "<br>";
+        
+        // Duplicate property names in object literals
+        var obj = {
+          a: 1,
+          a: 2
+        };
+        result.innerHTML += "obj.a: " + obj.a + "<br>";
+        
+        // with statement
+        with ({a: 3}) {
+          result.innerHTML += "a: " + a + "<br>";
+        }</script>
+</body>
+</html>

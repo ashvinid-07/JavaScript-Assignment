@@ -1,0 +1,44 @@
+<!--Write a function that checks if a given substring exists within a string. 
+Return a boolean value indicating the result.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS String Search</title>
+</head>
+<body>
+  <h1>Substring Checker</h1>
+  <input id="input-string" type="text" placeholder="Enter a string">
+  <input id="input-substring" type="text" placeholder="Enter a substring">
+  <button id="check-substring-button">Check Substring</button>
+  <div id="output"></div>
+
+  <script>
+        // Get the input fields, button, and output element
+        let inputField = document.getElementById("input-string");
+        let substringField = document.getElementById("input-substring");
+        let checkSubstringButton = document.getElementById("check-substring-button");
+        let outputElement = document.getElementById("output");
+
+        // Function to check if a substring exists within a string
+        function checkSubstring(str, substr) {
+        // Use the includes() method to check if the substring exists
+        let result = str.includes(substr);
+
+        return result;
+        }
+
+        // Add an event listener to the button
+        checkSubstringButton.addEventListener("click", function() {
+        // Get the input string and substring
+        let inputStr = inputField.value;
+        let inputSubstr = substringField.value;
+
+        // Check if the substring exists
+        let result = checkSubstring(inputStr, inputSubstr);
+
+        // Display the result
+        outputElement.innerHTML = `Substring exists: ${result}`;
+        });
+  </script>
+</body>
+</html>

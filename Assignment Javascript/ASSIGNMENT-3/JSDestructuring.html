@@ -1,0 +1,33 @@
+<!--Write a program that uses array destructuring to extract the first two elements from an array.
+Create a function that takes an object and destructures its properties to return a formatted string.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Destructuring</title>
+</head>
+<body>
+    <h1>Array and Object Destructuring Example</h1>
+  <script>
+    // Create an array
+    let numbers = [1, 2, 3, 4, 5];
+
+    // Use array destructuring to extract the first two elements
+    let [first, second] = numbers;
+
+    console.log(first); // Output: 1
+    console.log(second); // Output: 2
+
+    // Function to destructure an object and return a formatted string
+    function formatPerson(person) {
+      let { name, age, occupation } = person;
+      return `${name} is a ${age} year old ${occupation}.`;
+    }
+
+    // Test the function
+    let person = { name: "Ashvini", age: 24, occupation: "Software Engineer" };
+    console.log(formatPerson(person)); // Output: "Ashvini is a 24 year old Software Engineer."
+  </script>
+</body>
+</html>

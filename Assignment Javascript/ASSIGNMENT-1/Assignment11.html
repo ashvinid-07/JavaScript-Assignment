@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arithmetic</title>
+</head>
+<body>
+    <h1>Arithmetic Operations</h1>
+    <form id="arithmetic">
+    <input type="number" id="number1" placeholder="Enter first number" required>
+    <input type="number" id="number2" placeholder="Enter second number" required>
+    <button type="button" onclick="performArithmetic()">Calculate</button>
+    </form>
+
+    <script>
+        function performArithmetic() {
+            const num1 = parseFloat(document.getElementById('number1').value);
+            const num2 = parseFloat(document.getElementById('number2').value);
+            const addition = num1 + num2;
+            const substration = num1 - num2;
+            const multiplication = num1 * num2;
+            const division = num2 !== 0 ? num1 / num2 : 'Error: Division by zero!';
+            console.log("Addition: "+addition);
+            console.log("Substration: " + substration);
+            console.log("Multiplication: " +multiplication);
+            console.log("Division: " +division);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!--Create examples demonstrating the behavior of the this keyword in different contexts: global object, inside an object method, and within a constructor function. Compare the behavior with regular functions and arrow functions.
+Deliverable: Provide detailed comments on the behavior of this in each context, and explain why it behaves differently in arrow functions.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS this Keyword</title>
+</head>
+<body>
+    <h1>This Keyword Demo</h1>
+    <p id="result"></p>
+    <script>
+        // Get the result element
+        let result = document.getElementById("result");
+        
+        // Global object
+        result.innerHTML += "Global object:<br>";
+        result.innerHTML += "this: " + this + "<br>";
+        
+        // Inside an object method
+        let obj = {
+          name: "John",
+          age: 30,
+          method: function() {
+            result.innerHTML += "Inside an object method:<br>";
+            result.innerHTML += "this: " + this + "<br>";
+            result.innerHTML += "this.name: " + this.name + "<br>";
+            result.innerHTML += "this.age: " + this.age + "<br>";
+          }
+        };
+        obj.method();
+        
+        // Within a constructor function
+        function Person(name, age) {
+          this.name = name;
+          this.age = age;
+          result.innerHTML += "Within a constructor function:<br>";
+          result.innerHTML += "this: " + this + "<br>";
+          result.innerHTML += "this.name: " + this.name + "<br>";
+          result.innerHTML += "this.age: " + this.age + "<br>";
+        }
+        let person = new Person("Jane", 25);
+        
+        // Regular function
+        function regularFunction() {
+          result.innerHTML += "Regular function:<br>";
+          result.innerHTML += "this: " + this + "<br>";
+        }
+        regularFunction();
+        
+        // Arrow function
+        let arrowFunction = () => {
+          result.innerHTML += "Arrow function:<br>";
+          result.innerHTML += "this: " + this + "<br>";
+        };
+        arrowFunction();
+        
+        // Object method with arrow function
+        let objArrow = {
+          name: "Bob",
+          age: 40,
+          method: () => {
+            result.innerHTML += "Object method with arrow function:<br>";
+            result.innerHTML += "this: " + this + "<br>";
+            result.innerHTML += "this.name: " + this.name + "<br>";
+            result.innerHTML += "this.age: " + this.age + "<br>";
+          }
+        };
+        objArrow.method();</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!--Write a JavaScript program that creates a JSON object, converts it into a string using JSON.stringify(), and then parses it back into an object using JSON.parse(). Use this JSON data to simulate an API response.
+Deliverable: Provide examples of accessing and manipulating JSON data after parsing, and explain when these methods are useful in real-world scenarios.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS JSON</title>
+</head>
+<body>
+    <h1>JSON Object Demo</h1>
+    <p id="result"></p>
+    <script>
+        // Get the result element
+        let result = document.getElementById("result");
+        
+        // Create a JSON object
+        let jsonData = {
+          name: "John Doe",
+          age: 30,
+          occupation: "Software Developer",
+          address: {
+            street: "123 Main St",
+            city: "Anytown",
+            state: "CA",
+            zip: "12345"
+          }
+        };
+        
+        // Convert the JSON object into a string using JSON.stringify()
+        let jsonString = JSON.stringify(jsonData);
+        result.innerHTML += "JSON String: " + jsonString + "<br>";
+        
+        // Parse the JSON string back into an object using JSON.parse()
+        let parsedJson = JSON.parse(jsonString);
+        result.innerHTML += "Parsed JSON: " + JSON.stringify(parsedJson) + "<br>";
+        
+        // Accessing and manipulating JSON data after parsing
+        result.innerHTML += "Name: " + parsedJson.name + "<br>";
+        result.innerHTML += "Age: " + parsedJson.age + "<br>";
+        result.innerHTML += "Occupation: " + parsedJson.occupation + "<br>";
+        result.innerHTML += "Address: " + parsedJson.address.street + ", " + parsedJson.address.city + ", " + parsedJson.address.state + " " + parsedJson.address.zip + "<br>";
+        
+        // Simulating an API response
+        let apiResponse = JSON.parse('{"name": "Jane Doe", "age": 25, "occupation": "Marketing Manager"}');
+        result.innerHTML += "API Response: " + JSON.stringify(apiResponse) + "<br>";
+        result.innerHTML += "API Response Name: " + apiResponse.name + "<br>";
+        result.innerHTML += "API Response Age: " + apiResponse.age + "<br>";
+        result.innerHTML += "API Response Occupation: " + apiResponse.occupation + "<br>";
+        
+        // Manipulating JSON data
+        parsedJson.name = "Jane Doe";
+        parsedJson.age = 25;
+        parsedJson.occupation = "Marketing Manager";
+        result.innerHTML += "Updated JSON: " + JSON.stringify(parsedJson) + "<br>";
+        
+        // Adding a new property to the JSON object
+        parsedJson.country = "USA";
+        result.innerHTML += "Updated JSON with new property: " + JSON.stringify(parsedJson) + "<br>";
+        
+        // Removing a property from the JSON object
+        delete parsedJson.address;
+        result.innerHTML += "Updated JSON with removed property: " + JSON.stringify(parsedJson) + "<br>";</script>
+</body>
+</html>

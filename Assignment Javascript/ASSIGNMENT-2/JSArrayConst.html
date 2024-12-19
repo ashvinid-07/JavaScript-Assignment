@@ -1,0 +1,32 @@
+<!--Create a constant array representing a set of colors. 
+Attempt to modify the array and explain the difference between reassigning the array and modifying its contents.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Array Const</title>
+</head>
+<body>
+  <h1>Constant Array</h1>
+  <div id="output"></div>
+
+  <script>
+        // Get the output element
+        let outputElement = document.getElementById("output");
+
+        // Create a constant array representing a set of colors
+        const colors = ["red", "green", "blue"];
+
+        // Attempt to reassign the array (this will not work)
+        try {
+            colors = ["yellow", "orange", "purple"];
+            outputElement.innerHTML += `<p>Reassigned array: ${colors}</p>`;
+        } catch (error) {
+            outputElement.innerHTML += `<p>Error: Cannot reassign a constant array</p>`;
+        }
+
+        // Attempt to modify the array's contents (this will work)
+        colors.push("pink");
+        outputElement.innerHTML += `<p>Modified array: ${colors}</p>`;
+  </script>
+</body>
+</html>

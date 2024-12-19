@@ -1,0 +1,53 @@
+<!--Create a buggy JavaScript program with intentional errors. Use console.log, breakpoints, and other debugging tools available in browser developer tools to find and fix the bugs.
+Deliverable: Document the process of debugging, including screenshots of using breakpoints and console.log outputs.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Debugging</title>
+</head>
+<body>
+    <h1>Buggy JavaScript Program</h1>
+    <p id="result"></p>
+    <script>
+        // Get the result element
+        let result = document.getElementById("result");
+        
+        // Function to calculate the sum of two numbers
+        function calculateSum(a, b) {
+          let sum = a + b;
+          return sum;
+        }
+        
+        // Function to calculate the product of two numbers
+        function calculateProduct(a, b) {
+          let product = a * b;
+          return product;
+        }
+        
+        // Main function
+        function main() {
+          let num1 = 10;
+          let num2 = 20;
+        
+          // Calculate the sum of num1 and num2
+          let sum = calculateSum(num1, num2);
+          console.log("Sum: " + sum);
+        
+          // Calculate the product of num1 and num2
+          let product = calculateProduct(num1, num2);
+          console.log("Product: " + product);
+        
+          // Intentional error: try to access an undefined variable
+          console.log("Undefined variable: " + undefinedVariable);
+        
+          // Intentional error: try to divide by zero
+          let divisionResult = num1 / 0;
+          console.log("Division result: " + divisionResult);
+        }
+        
+        // Call the main function
+        main();</script>
+</body>
+</html>

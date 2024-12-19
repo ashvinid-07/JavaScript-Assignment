@@ -1,0 +1,69 @@
+<!-- Create an array of your favorite fruits and write functions to add, remove, and display the list of fruits.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Arrays</title>
+</head>
+<body>
+  <h1>Fruit List</h1>
+  <input id="fruit-input" type="text" placeholder="Enter a fruit">
+  <button id="add-fruit-button">Add Fruit</button>
+  <button id="remove-fruit-button">Remove Fruit</button>
+  <div id="fruit-list"></div>
+
+  <script>
+     // Get the input field, buttons, and output element
+    let fruitInput = document.getElementById("fruit-input");
+    let addFruitButton = document.getElementById("add-fruit-button");
+    let removeFruitButton = document.getElementById("remove-fruit-button");
+    let fruitListElement = document.getElementById("fruit-list");
+
+    // Initialize the fruit list array
+    let fruitList = ["Apple", "Banana", "Cherry"];
+
+    // Function to add a fruit to the list
+    function addFruit(fruit) {
+        fruitList.push(fruit);
+        displayFruitList();
+    }
+
+    // Function to remove a fruit from the list
+    function removeFruit(fruit){
+        let index = fruitList.indexOf(fruit);
+        if (index !== -1) {
+            fruitList.splice(index, 1);
+        }
+        displayFruitList();
+      }
+
+      // Function to display the fruit list
+      function displayFruitList() {
+        let fruitListHtml = "";
+        for (let fruit of fruitList) {
+          fruitListHtml += `<li>${fruit}</li>`;
+        }
+        fruitListElement.innerHTML = `<ul>${fruitListHtml}</ul>`;
+      }
+
+      // Add event listeners to the buttons
+      addFruitButton.addEventListener("click", function() {
+        let fruit = fruitInput.value.trim();
+        if (fruit !== "") {
+          addFruit(fruit);
+          fruitInput.value = "";
+        }
+      });
+
+      removeFruitButton.addEventListener("click", function() {
+        let fruit = fruitInput.value.trim();
+        if (fruit !== "") {
+          removeFruit(fruit);
+          fruitInput.value = "";
+        }
+      });
+
+      // Initial display of the fruit list
+      displayFruitList();
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!-- Write a function that takes an array of strings and a search term, 
+ returning all strings that contain the search term.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Array Search</title>
+</head>
+<body>
+  <h1>Search Array of Strings</h1>
+  <input id="search-input" type="text" placeholder="Enter search term">
+  <button id="search-button">Search</button>
+  <div id="output"></div>
+
+  <script>
+        // Get the input field, button, and output element
+        let searchInput = document.getElementById("search-input");
+        let searchButton = document.getElementById("search-button");
+        let outputElement = document.getElementById("output");
+
+        // Initialize the array of strings
+        let strings = ["hello world", "foo bar", "hello again", "baz qux", "hello friend"];
+
+        // Function to search for a term in the array of strings
+        function searchStrings(strings, searchTerm) {
+            let results = strings.filter(function(str) {
+                return str.toLowerCase().includes(searchTerm.toLowerCase());
+            });
+            return results;
+        }
+
+        // Add event listener to the search button
+        searchButton.addEventListener("click", function() {
+            let searchTerm = searchInput.value.trim();
+            if (searchTerm !== "") {
+                let results = searchStrings(strings, searchTerm);
+                let outputHtml = "";
+                for (let result of results) {
+                    outputHtml += `<p>${result}</p>`;
+               }
+            outputElement.innerHTML = outputHtml;
+            }
+        });
+  </script>
+</body>
+</html>

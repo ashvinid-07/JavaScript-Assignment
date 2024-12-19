@@ -1,0 +1,85 @@
+<!--Write a program that creates an object representing a car with properties such as 
+make, model, year, and color. Implement functions to add, modify, and delete properties dynamically.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Object Properties</title>
+</head>
+<body>
+    <h1>Car Details</h1>
+    <div id="car-details"></div>
+    <br>
+    <input id="property-key" type="text" placeholder="Property Key">
+    <input id="property-value" type="text" placeholder="Property Value">
+    <button id="add-property">Add Property</button>
+    <button id="modify-property">Modify Property</button>
+    <button id="delete-property">Delete Property</button>
+
+    <script>
+        // Create a Car object
+        let car = {
+            make: "Toyota",
+            model: "Corolla",
+            year: 2020,
+            color: "Silver"
+        };
+
+        // Function to display car details
+        function displayCarDetails(car) {
+            let carDetailsHTML = `
+                <p><b>Make:</b> ${car.make}</p>
+                <p><b>Model:</b> ${car.model}</p>
+                <p><b>Year:</b> ${car.year}</p>
+                <p><b>Color:</b> ${car.color}</p>
+            `;
+            document.getElementById("car-details").innerHTML = carDetailsHTML;
+        }
+
+        // Function to add a property to the car object
+        function addProperty() {
+            let propertyKey = document.getElementById("property-key").value;
+            let propertyValue = document.getElementById("property-value").value;
+            car[propertyKey] = propertyValue;
+            displayCarDetails(car);
+            document.getElementById("property-key").value = "";
+            document.getElementById("property-value").value = "";
+        }
+
+        // Function to modify a property of the car object
+        function modifyProperty() {
+            let propertyKey = document.getElementById("property-key").value;
+            let propertyValue = document.getElementById("property-value").value;
+            if (car.hasOwnProperty(propertyKey)) {
+                car[propertyKey] = propertyValue;
+                displayCarDetails(car);
+            } else {
+                alert(`Property '${propertyKey}' does not exist.`);
+            }
+            document.getElementById("property-key").value = "";
+            document.getElementById("property-value").value = "";
+        }
+
+        // Function to delete a property from the car object
+        function deleteProperty() {
+            let propertyKey = document.getElementById("property-key").value;
+            if (car.hasOwnProperty(propertyKey)) {
+                delete car[propertyKey];
+                displayCarDetails(car);
+            } else {
+                alert(`Property '${propertyKey}' does not exist.`);
+            }
+            document.getElementById("property-key").value = "";
+        }
+
+        // Add event listeners to buttons
+        document.getElementById("add-property").addEventListener("click", addProperty);
+        document.getElementById("modify-property").addEventListener("click", modifyProperty);
+        document.getElementById("delete-property").addEventListener("click", deleteProperty);
+
+        // Display initial car details
+        displayCarDetails(car);
+    </script>
+</body>
+</html>

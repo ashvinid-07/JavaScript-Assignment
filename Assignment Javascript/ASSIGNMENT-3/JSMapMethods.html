@@ -1,0 +1,48 @@
+<!--Write a function that takes a Map and returns an array of its keys.
+Create a program that uses set(), get(), and has() methods of a Map.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Map Example</h1>
+  <script>
+    // Function to get the keys of a Map
+    function getMapKeys(map) {
+      return Array.from(map.keys());
+    }
+
+    // Test the function
+    let people = new Map();
+    people.set("John", 25);
+    people.set("Jane", 30);
+    people.set("Bob", 35);
+    console.log(getMapKeys(people)); // Output: ["John", "Jane", "Bob"]
+
+    // Create a Map
+    let peopleMap = new Map();
+
+    // Set a key-value pair
+    peopleMap.set("John", 25);
+    console.log(peopleMap.get("John")); // Output: 25
+
+    // Check if a key exists
+    console.log(peopleMap.has("John")); // Output: true
+    console.log(peopleMap.has("Jane")); // Output: false
+
+    // Get a key-value pair
+    console.log(peopleMap.get("John")); // Output: 25
+
+    // Set another key-value pair
+    peopleMap.set("Jane", 30);
+    console.log(peopleMap.get("Jane")); // Output: 30
+
+    // Check if a key exists
+    console.log(peopleMap.has("John")); // Output: true
+    console.log(peopleMap.has("Jane")); // Output: true
+  </script>
+</body>
+</html>

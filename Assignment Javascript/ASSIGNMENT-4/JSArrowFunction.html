@@ -1,0 +1,61 @@
+<!--Write a program that demonstrates the differences between regular functions and arrow functions in JavaScript, focusing on syntax, the this keyword, and usage in callbacks. Use examples to compare their behavior.
+Deliverable: Provide a comparison of the output and behavior for both types of functions, especially in asynchronous operations like event listeners or setTimeout.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Arrow Function</title>
+</head>
+<body>
+    <h1>Regular Functions vs Arrow Functions</h1>
+    <p id="result"></p>
+    <button id="button">Click me!</button>
+    <script>
+        // Get the result element
+        let result = document.getElementById("result");
+        
+        // Regular function
+        function regularFunction() {
+          result.innerHTML += "Regular function called!<br>";
+          result.innerHTML += "this: " + this + "<br>";
+        }
+        
+        // Arrow function
+        let arrowFunction = () => {
+          result.innerHTML += "Arrow function called!<br>";
+          result.innerHTML += "this: " + this + "<br>";
+        };
+        
+        // Button event listener
+        document.getElementById("button").addEventListener("click", regularFunction);
+        document.getElementById("button").addEventListener("click", arrowFunction);
+        
+        // setTimeout
+        setTimeout(regularFunction, 2000);
+        setTimeout(arrowFunction, 3000);
+        
+        // Callback function
+        function callbackFunction(func) {
+          func();
+        }
+        callbackFunction(regularFunction);
+        callbackFunction(arrowFunction);
+        
+        // Object method
+        let obj = {
+          name: "John",
+          age: 30,
+          regularMethod: function() {
+            result.innerHTML += "Regular method called!<br>";
+            result.innerHTML += "this: " + this + "<br>";
+          },
+          arrowMethod: () => {
+            result.innerHTML += "Arrow method called!<br>";
+            result.innerHTML += "this: " + this + "<br>";
+          }
+        };
+        obj.regularMethod();
+        obj.arrowMethod();</script>
+</body>
+</html>

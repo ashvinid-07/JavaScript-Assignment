@@ -1,0 +1,37 @@
+<!--Write a function that takes a number and returns its square root using Math.sqrt().
+Create a program that generates a random number between 1 and 100 using Math.random() and rounds it to the nearest whole number.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Math</title>
+</head>
+<body>
+    <h1>Math Functions Example</h1>
+  <script>
+    // Function to calculate the square root of a number
+    function calculateSquareRoot(number) {
+      if (number < 0) {
+        throw new Error("Cannot calculate square root of a negative number");
+      }
+      let squareRoot = Math.sqrt(number);
+      return squareRoot;
+    }
+
+    // Generate a random number between 1 and 100
+    let randomNumber = Math.random() * 100 + 1;
+
+    // Round the random number to the nearest whole number
+    let roundedNumber = Math.round(randomNumber);
+
+    // Log the rounded number
+    console.log(`Random number: ${roundedNumber}`);
+
+    // Example usage of the calculateSquareRoot function
+    let number = 16;
+    let squareRoot = calculateSquareRoot(number);
+    console.log(`Square root of ${number}: ${squareRoot}`);
+  </script>
+</body>
+</html>

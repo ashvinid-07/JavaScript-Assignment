@@ -1,0 +1,63 @@
+<!--Create a program that showcases JavaScript hoisting behavior. Write examples for hoisting with both var and let/const. Explain the difference in behavior for variables and function declarations.
+Deliverable: Provide a detailed explanation of what gets hoisted in each example and how it affects the execution.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Hoisting</title>
+</head>
+<body>
+    <h1>Hoisting Demo</h1>
+    <p id="result"></p>
+    <script>
+        // Get the result element
+        let result = document.getElementById("result");
+
+        // Hoisting with var
+        result.innerHTML += "Hoisting with var:<br>";
+
+        console.log(x); // outputs: undefined
+        var x = 10;
+        console.log(x); // outputs: 10
+
+        // Hoisting with let/const
+        result.innerHTML += "<br>Hoisting with let/const:<br>";
+
+        try {
+        console.log(y); // throws: ReferenceError: y is not defined
+        } catch (error) {
+        result.innerHTML += "Error: " + error.message + "<br>";
+        }
+        let y = 20;
+
+        // Hoisting with function declarations
+        result.innerHTML += "<br>Hoisting with function declarations:<br>";
+
+        foo(); // outputs: foo
+        function foo() {
+        console.log("foo");
+        }
+
+        // Hoisting with function expressions
+        result.innerHTML += "<br>Hoisting with function expressions:<br>";
+
+        try {
+        bar(); // throws: TypeError: bar is not a function
+        } catch (error) {
+        result.innerHTML += "Error: " + error.message + "<br>";
+        }
+        var bar = function() {
+        console.log("bar");
+        }
+
+        // Hoisting with let/const and block scope
+        result.innerHTML += "<br>Hoisting with let/const and block scope:<br>";
+
+        if (true) {
+        console.log(z); // throws: ReferenceError: z is not defined
+        let z = 30;
+        }
+    </script>
+</body>
+</html>

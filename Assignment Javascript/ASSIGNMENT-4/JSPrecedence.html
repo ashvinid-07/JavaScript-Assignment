@@ -1,0 +1,57 @@
+<!--Write a program that demonstrates the use of different operators (+, -, *, /, ++, --, &&, ||) in JavaScript. 
+Explain how JavaScript evaluates expressions based on operator precedence, with a few examples.Deliverable: 
+Include examples with parenthesis to change the precedence and show the difference in output when precedence changes.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Precedence</title>
+</head>
+<body>
+    <h1>JavaScript Operators Demo</h1>
+    <p id="result"></p>
+    <script>
+        // Demonstrate arithmetic operators
+        let result = document.getElementById("result");
+
+        // Addition
+        result.innerHTML += "2 + 3 = " + (2 + 3) + "<br>";
+
+        // Subtraction
+        result.innerHTML += "5 - 2 = " + (5 - 2) + "<br>";
+
+        // Multiplication
+        result.innerHTML += "4 * 5 = " + (4 * 5) + "<br>";
+
+        // Division
+        result.innerHTML += "10 / 2 = " + (10 / 2) + "<br>";
+
+        // Increment and Decrement operators
+        let x = 5;
+        result.innerHTML += "x = 5; x++ = " + (x++) + "<br>";
+        result.innerHTML += "x = " + x + "; x-- = " + (x--) + "<br>";
+
+        // Logical AND (&&) and OR (||) operators
+        let a = 5;
+        let b = 10;
+        result.innerHTML += "(a > 3 && b > 5) = " + (a > 3 && b > 5) + "<br>";
+        result.innerHTML += "(a > 3 || b > 5) = " + (a > 3 || b > 5) + "<br>";
+
+        // Operator Precedence Examples
+        result.innerHTML += "<h2>Operator Precedence Examples</h2>";
+
+        // Example 1: 2 + 3 * 4
+        result.innerHTML += "2 + 3 * 4 = " + (2 + 3 * 4) + "<br>";
+        result.innerHTML += "Using parentheses: (2 + 3) * 4 = " + ((2 + 3) * 4) + "<br>";
+
+        // Example 2: 10 - 3 + 2
+        result.innerHTML += "10 - 3 + 2 = " + (10 - 3 + 2) + "<br>";
+        result.innerHTML += "Using parentheses: (10 - 3) + 2 = " + ((10 - 3) + 2) + "<br>";
+
+        // Example 3: 5 > 3 && 2 > 1
+        result.innerHTML += "(5 > 3 && 2 > 1) = " + (5 > 3 && 2 > 1) + "<br>";
+        result.innerHTML += "Using parentheses: (5 > 3) && (2 > 1) = " + ((5 > 3) && (2 > 1)) + "<br>";
+    </script>
+</body>
+</html>

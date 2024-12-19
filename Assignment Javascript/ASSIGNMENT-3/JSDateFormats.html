@@ -1,0 +1,32 @@
+<!--Create a function that formats a given Date object into a string in the format "MM/DD/YYYY".
+Write a program that logs the current date in three different formats: 
+ISO format, locale string format, and a custom format of your choice.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Date Formats</title>
+</head>
+<body>
+    <h1>Date Formatting Example</h1>
+  <script>
+    // Function to format a Date object into a string in the format "MM/DD/YYYY"
+    function formatDate(dateObject) {
+      let month = dateObject.getMonth() + 1;
+      let day = dateObject.getDate();
+      let year = dateObject.getFullYear();
+      let dateString = `${month}/${day}/${year}`;
+      return dateString;
+    }
+
+    // Get the current date and time
+    let currentDate = new Date();
+
+    // Log the current date in three different formats
+    console.log(`Current date (ISO format): ${currentDate.toISOString()}`);
+    console.log(`Current date (locale string format): ${currentDate.toLocaleString()}`);
+    console.log(`Current date (custom format): ${formatDate(currentDate)}`);
+  </script>
+</body>
+</html>

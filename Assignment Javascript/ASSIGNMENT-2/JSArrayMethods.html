@@ -1,0 +1,60 @@
+<!-- Implement an array of numbers and demonstrate 
+ the use of .map(), .filter(), and .reduce() methods to transform the array in different ways.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Array Methods</title>
+</head>
+<body>
+  <h1>Array Methods</h1>
+  <div id="output"></div>
+
+  <script>
+        // Get the output element
+        let outputElement = document.getElementById("output");
+
+        // Initialize the array of numbers
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        // Demonstrate .map() method
+        let doubledNumbers = numbers.map(function(num) {
+            return num * 2;
+        });
+        outputElement.innerHTML += `
+            <p>Original array: ${numbers}</p>
+            <p>Doubled numbers using .map(): ${doubledNumbers}</p>
+        `;
+
+        // Demonstrate .filter() method
+        let evenNumbers = numbers.filter(function(num) {
+            return num % 2 === 0;
+        });
+            outputElement.innerHTML += `
+            <p>Even numbers using .filter(): ${evenNumbers}</p>
+        `;
+
+        // Demonstrate .reduce() method
+        let sumOfNumbers = numbers.reduce(function(acc, current) {
+            return acc + current;
+        }, 0);
+            outputElement.innerHTML += `
+            <p>Sum of numbers using .reduce(): ${sumOfNumbers}</p>
+        `;
+
+        // Demonstrate chaining .map(), .filter(), and .reduce() methods
+        let sumOfSquaredEvenNumbers = numbers
+        .map(function(num) {
+            return num * num;
+        })
+        .filter(function(num) {
+            return num % 2 === 0;
+        })
+        .reduce(function(acc, current) {
+            return acc + current;
+        }, 0);
+        outputElement.innerHTML += `
+        <p>Sum of squared even numbers using chained methods: ${sumOfSquaredEvenNumbers}</p>
+        `;
+  </script>
+</body>
+</html>

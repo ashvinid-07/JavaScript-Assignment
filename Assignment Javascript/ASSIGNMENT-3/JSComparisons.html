@@ -1,0 +1,47 @@
+<!--Write a function that compares two numbers and returns a string indicating which is larger, or if they are equal.
+Create a program that checks if a given string is equal to "JavaScript" using both strict and loose equality checks.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Comparisons</title>
+</head>
+<body>
+    <h1>Comparison Example</h1>
+  <script>
+    // Function to compare two numbers
+    function compareNumbers(num1, num2) {
+      if (num1 === num2) {
+        return "The numbers are equal";
+      }
+      if (num1 > num2) {
+        return `${num1} is larger than ${num2}`;
+      }
+      if (num2 > num1) {
+        return `${num2} is larger than ${num1}`;
+      }
+    }
+
+    // Get the string to check
+    let str = "javascript";
+
+    // Check if the string is equal to "JavaScript" using strict equality
+    let isStrictlyEqual = str === "JavaScript";
+    console.log(`Strictly equal: ${isStrictlyEqual}`);
+
+    // Check if the string is equal to "JavaScript" using loose equality
+    let isLooselyEqual = str == "JavaScript";
+    console.log(`Loosely equal: ${isLooselyEqual}`);
+
+    // Check if the string is equal to "JavaScript" using strict equality and ignoring case
+    let isCaseInsensitiveEqual = str.toLowerCase() === "javascript";
+    console.log(`Case-insensitive equal: ${isCaseInsensitiveEqual}`);
+
+    // Example usage of the compareNumbers function
+    let num1 = 10;
+    let num2 = 20;
+    console.log(compareNumbers(num1, num2));
+  </script>
+</body>
+</html>

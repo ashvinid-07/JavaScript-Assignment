@@ -1,0 +1,44 @@
+<!--Write a program that prints all even numbers from 1 to 100.
+Create a function that calculates the factorial of a number using a for loop.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Loop For</title>
+</head>
+<body>
+    <h1>Even Numbers and Factorial Calculator</h1>
+  <script>
+    // Function to print all even numbers from 1 to 100
+    function printEvenNumbers() {
+      for (let i = 1; i <= 100; i++) {
+        if (i % 2 === 0) {
+          console.log(i);
+        }
+      }
+    }
+
+    // Function to calculate the factorial of a number
+    function calculateFactorial(number) {
+      let factorial = 1;
+      for (let i = 1; i <= number; i++) {
+        factorial *= i;
+      }
+      return factorial;
+    }
+
+    // Call the function to print even numbers
+    printEvenNumbers();
+
+    // Get the number from the user
+    let number = 5;
+
+    // Calculate the factorial of the number
+    let factorial = calculateFactorial(number);
+
+    // Log the result
+    console.log(`Factorial of ${number}: ${factorial}`);
+  </script>
+</body>
+</html>

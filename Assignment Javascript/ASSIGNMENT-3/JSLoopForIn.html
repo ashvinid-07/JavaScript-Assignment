@@ -1,0 +1,52 @@
+<!--
+Create an object representing a person (with properties like name, age, and job) and use a for...in loop to log each property and its value.
+Write a function that sums all numeric properties of an object using a for...in loop.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Loop For In</title>
+</head>
+<body>
+    <h1>Person Object and Numeric Sum</h1>
+    <script>
+      // Create an object representing a person
+      let person = {
+        name: "Ashvini Dhage",
+        age: 24,
+        job: "Software Engineer"
+      };
+  
+      // Use a for...in loop to log each property and its value
+      for (let property in person) {
+        console.log(`${property}: ${person[property]}`);
+      }
+  
+      // Function to sum all numeric properties of an object
+      function sumNumericProperties(object) {
+        let sum = 0;
+        for (let property in object) {
+          if (typeof object[property] === "number") {
+            sum += object[property];
+          }
+        }
+        return sum;
+      }
+  
+      // Create an object with numeric properties
+      let numbers = {
+        a: 10,
+        b: 20,
+        c: 30,
+        d: "hello"
+      };
+  
+      // Call the function to sum the numeric properties
+      let sum = sumNumericProperties(numbers);
+  
+      // Log the result
+      console.log(`Sum of numeric properties: ${sum}`);
+    </script>
+</body>
+</html>

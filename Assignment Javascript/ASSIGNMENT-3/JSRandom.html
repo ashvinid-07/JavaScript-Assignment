@@ -1,0 +1,40 @@
+<!--Write a function that generates a random integer between two specified values.
+Create an array of 10 random numbers and write a program to find the maximum and minimum values.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Random</title>
+</head>
+<body>
+    <h1>Random Numbers Example</h1>
+  <script>
+    // Function to generate a random integer between two specified values
+    function generateRandomInteger(min, max) {
+      if (min > max) {
+        throw new Error("Min value cannot be greater than max value");
+      }
+      let randomInteger = Math.floor(Math.random() * (max - min + 1)) + min;
+      return randomInteger;
+    }
+
+    // Create an array to store the random numbers
+    let randomNumbers = [];
+
+    // Generate 10 random numbers between 1 and 100
+    for (let i = 0; i < 10; i++) {
+      randomNumbers.push(generateRandomInteger(1, 100));
+    }
+
+    // Find the maximum and minimum values in the array
+    let max = Math.max(...randomNumbers);
+    let min = Math.min(...randomNumbers);
+
+    // Log the maximum and minimum values
+    console.log(`Random numbers: ${randomNumbers}`);
+    console.log(`Maximum value: ${max}`);
+    console.log(`Minimum value: ${min}`);
+  </script>
+</body>
+</html>

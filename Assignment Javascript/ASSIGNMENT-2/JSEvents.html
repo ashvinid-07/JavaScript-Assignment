@@ -1,0 +1,40 @@
+<!--Build a simple web page with a button that changes the background color of the page when clicked. 
+Use event listeners to handle the button click.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Events</title>
+  <style>
+    body {
+      transition: background-color 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <h1>Background Color Changer</h1>
+  <button id="change-color-button">Change Background Color</button>
+
+  <script>
+        // Get the button element
+        let changeColorButton = document.getElementById("change-color-button");
+
+        // Function to generate a random color
+        function getRandomColor() {
+            let colors = ["red", "green", "blue", "yellow", "orange", "purple"];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Add an event listener to the button
+        changeColorButton.addEventListener("click", function() {
+            // Get the current background color
+            let currentColor = document.body.style.backgroundColor;
+
+            // Generate a new random color
+            let newColor = getRandomColor();
+
+            // Change the background color
+            document.body.style.backgroundColor = newColor;
+        });
+  </script>
+</body>
+</html>

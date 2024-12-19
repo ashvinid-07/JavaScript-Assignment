@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Statements</title>
+</head>
+<body>
+    <h1>JavaScript Statement</h1>
+    <button onclick="runScript()">Run Script</button>
+    <script>
+        let userName;
+        userName = "Ashvini";
+        function User(name){
+            console.log("Hello, " + name + "!");
+        }
+
+        function checkUserName(){
+            if(userName){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        function print(times){
+            for(let i = 0; i <= times; i++){
+                console.log("Number : " + (i + 1));
+            }
+        }
+
+        function runScript(){
+            if(checkUserName()){
+                User(userName);
+                print(5);
+            }
+            else{
+                console.log("No username");
+            }
+        }
+    </script>
+</body>
+</html>

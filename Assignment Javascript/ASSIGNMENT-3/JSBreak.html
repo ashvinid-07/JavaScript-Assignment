@@ -1,0 +1,38 @@
+<!--Write a program that uses a loop to find the first number greater than 50 in an array and breaks out of the loop.
+Create a function that loops through numbers 1 to 100 and breaks if it finds a number divisible by 13.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Break</title>
+</head>
+<body>
+    <h1>Loop and Break</h1>
+  <script>
+    // Create an array of numbers
+    let numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+    // Use a loop to find the first number greater than 50
+    for (let i = 0; i < numbers.length; i++) {
+      if (numbers[i] > 50) {
+        console.log(`First number greater than 50: ${numbers[i]}`);
+        break;
+      }
+    }
+
+    // Function to loop through numbers 1 to 100 and break if divisible by 13
+    function loopThroughNumbers() {
+      for (let i = 1; i <= 100; i++) {
+        if (i % 13 === 0) {
+          console.log(`Number divisible by 13: ${i}`);
+          break;
+        }
+      }
+    }
+
+    // Call the function to start looping through numbers
+    loopThroughNumbers();
+  </script>
+</body>
+</html>

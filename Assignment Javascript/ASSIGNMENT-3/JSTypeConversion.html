@@ -1,0 +1,50 @@
+<!--Write a program that converts a string to a number and logs the result.
+Create a function that checks the type of a variable and converts it to a specified type.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Type Conversion</title>
+</head>
+<body>
+    <h1>Type Conversion Example</h1>
+  <script>
+    // Convert a string to a number
+    let string = "42";
+    let number = Number(string);
+    console.log(number); // Output: 42
+    console.log(typeof number); // Output: "number"
+
+    // Function to convert a variable to a specified type
+    function convertType(variable, type) {
+      switch (type) {
+        case "number":
+          return Number(variable);
+        case "string":
+          return String(variable);
+        case "boolean":
+          return Boolean(variable);
+        default:
+          throw new Error(`Unsupported type: ${type}`);
+      }
+    }
+
+    // Test the function
+    let variable = "42";
+    let convertedVariable = convertType(variable, "number");
+    console.log(convertedVariable); // Output: 42
+    console.log(typeof convertedVariable); // Output: "number"
+
+    variable = 42;
+    convertedVariable = convertType(variable, "string");
+    console.log(convertedVariable); // Output: "42"
+    console.log(typeof convertedVariable); // Output: "string"
+
+    variable = "true";
+    convertedVariable = convertType(variable, "boolean");
+    console.log(convertedVariable); // Output: true
+    console.log(typeof convertedVariable); // Output: "boolean"
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!--Create a function that takes a Date object and returns the year, month, and day using getFullYear(), getMonth(), and getDate().
+Write a program that logs the current hour, minute, and second using getHours(), getMinutes(), and getSeconds().-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Date Get Methods</title>
+</head>
+<body>
+    <h1>Date and Time Example</h1>
+  <script>
+    // Function to get the year, month, and day from a Date object
+    function getYearMonthDay(dateObject) {
+      let year = dateObject.getFullYear();
+      let month = dateObject.getMonth() + 1;
+      let day = dateObject.getDate();
+      return { year, month, day };
+    }
+
+    // Get the current date and time
+    let currentDate = new Date();
+
+    // Log the current year, month, and day
+    let { year, month, day } = getYearMonthDay(currentDate);
+    console.log(`Current year: ${year}`);
+    console.log(`Current month: ${month}`);
+    console.log(`Current day: ${day}`);
+
+    // Log the current hour, minute, and second
+    console.log(`Current hour: ${currentDate.getHours()}`);
+    console.log(`Current minute: ${currentDate.getMinutes()}`);
+    console.log(`Current second: ${currentDate.getSeconds()}`);
+  </script>
+</body>
+</html>

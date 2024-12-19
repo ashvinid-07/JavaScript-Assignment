@@ -1,0 +1,68 @@
+<!--Extend the car object from the previous assignment to include methods 
+like getCarInfo() and updateColor(newColor). Demonstrate their use in a console log.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Object Methods</title>
+</head>
+<body>
+  <h1>Car Object Method</h1>
+  <div id="car-details"></div>
+  <br>
+  <input id="new-color" type="text" placeholder="New Color">
+  <button id="update-color">Update Color</button>
+
+  <script>
+        // Create a Car object
+        let car = {
+            make: "Toyota",
+            model: "Corolla",
+            year: 2020,
+            color: "Silver",
+
+            // Method to get car information
+            getCarInfo: function() {
+                return `Make: ${this.make}, Model: ${this.model}, Year: ${this.year}, Color: ${this.color}`;
+            },
+
+            // Method to update car color
+            updateColor: function(newColor) {
+                this.color = newColor;
+            }
+        };
+
+        // Function to display car details
+        function displayCarDetails(car) {
+            let carDetailsHTML = `
+                <p><b>Make:</b> ${car.make}</p>
+                <p><b>Model:</b> ${car.model}</p>
+                <p><b>Year:</b> ${car.year}</p>
+                <p><b>Color:</b> ${car.color}</p>
+            `;
+            document.getElementById("car-details").innerHTML = carDetailsHTML;
+        }
+
+        // Display initial car details
+        displayCarDetails(car);
+
+        // Log car information using getCarInfo method
+        console.log(car.getCarInfo());
+
+        // Update car color using updateColor method
+        car.updateColor("Red");
+        displayCarDetails(car);
+
+        // Log updated car information using getCarInfo method
+        console.log(car.getCarInfo());
+
+        // Add event listener to update color button
+        document.getElementById("update-color").addEventListener("click", function() {
+        let newColor = document.getElementById("new-color").value;
+        car.updateColor(newColor);
+        displayCarDetails(car);
+        console.log(car.getCarInfo());
+        document.getElementById("new-color").value = "";
+        });
+  </script>
+</body>
+</html>

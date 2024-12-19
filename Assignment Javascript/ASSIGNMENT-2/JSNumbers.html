@@ -1,0 +1,43 @@
+<!--Write a program that takes a number as input and determines whether it is even or odd. 
+Use modulus operator to achieve this.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Numbers</title>
+</head>
+<body>
+  <h1>Even or Odd</h1>
+  <input id="input-number" type="number" placeholder="Enter a number">
+  <button id="check-even-odd-button">Check Even or Odd</button>
+  <div id="output"></div>
+
+  <script>
+    // Get the input field, button, and output element
+    let inputField = document.getElementById("input-number");
+    let checkEvenOddButton = document.getElementById("check-even-odd-button");
+    let outputElement = document.getElementById("output");
+
+    // Function to check if a number is even or odd
+    function checkEvenOdd(num) {
+      // Use the modulus operator to check if the number is even or odd
+      if (num % 2 === 0) {
+        return "Even";
+      } else {
+        return "Odd";
+      }
+    }
+
+    // Add an event listener to the button
+    checkEvenOddButton.addEventListener("click", function() {
+      // Get the input number
+      let inputNum = parseInt(inputField.value);
+
+      // Check if the number is even or odd
+      let result = checkEvenOdd(inputNum);
+
+      // Display the result
+      outputElement.innerHTML = `The number ${inputNum} is ${result}.`;
+    });
+  </script>
+</body>
+</html>

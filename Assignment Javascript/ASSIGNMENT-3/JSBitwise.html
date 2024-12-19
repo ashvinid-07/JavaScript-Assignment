@@ -1,0 +1,50 @@
+<!--Write a program that demonstrates the use of bitwise AND, OR, and NOT operators on two numbers.
+Create a function that takes two binary strings, converts them to numbers, and returns their bitwise XOR result.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Bitwise</title>
+</head>
+<body>
+    <h1>Bitwise Operators Example</h1>
+  <script>
+    // Define two numbers
+    let num1 = 5; // Binary: 101
+    let num2 = 3; // Binary: 011
+
+    // Bitwise AND operator (&)
+    let andResult = num1 & num2;
+    console.log(`Bitwise AND: ${num1} & ${num2} = ${andResult}`); // Output: Bitwise AND: 5 & 3 = 1
+
+    // Bitwise OR operator (|)
+    let orResult = num1 | num2;
+    console.log(`Bitwise OR: ${num1} | ${num2} = ${orResult}`); // Output: Bitwise OR: 5 | 3 = 7
+
+    // Bitwise NOT operator (~)
+    let notResult1 = ~num1;
+    console.log(`Bitwise NOT: ~${num1} = ${notResult1}`); // Output: Bitwise NOT: ~5 = -6
+    let notResult2 = ~num2;
+    console.log(`Bitwise NOT: ~${num2} = ${notResult2}`); // Output: Bitwise NOT: ~3 = -4
+
+    // Function to calculate bitwise XOR of two binary strings
+    function binaryXOR(binStr1, binStr2) {
+      // Convert binary strings to numbers
+      let num1 = parseInt(binStr1, 2);
+      let num2 = parseInt(binStr2, 2);
+
+      // Calculate bitwise XOR
+      let xorResult = num1 ^ num2;
+
+      // Return the result as a binary string
+      return xorResult.toString(2);
+    }
+
+    // Test the function
+    let binStr1 = "101";
+    let binStr2 = "011";
+    console.log(`Bitwise XOR: ${binStr1} ^ ${binStr2} = ${binaryXOR(binStr1, binStr2)}`); // Output: Bitwise XOR: 101 ^ 011 = 110
+  </script>
+</body>
+</html>

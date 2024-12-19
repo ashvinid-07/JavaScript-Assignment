@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Const</title>
+</head>
+<body>
+    <h1>JavaScript Const</h1>
+    <button onclick="testConst()">Test Const</button>
+
+    <script>
+        function testConst() {
+
+            const PI = 3.14159;
+
+            console.log("The Value of PI is: " + PI);
+
+            try{
+                PI = 3.14;
+            }
+            catch(error) {
+                console.error("Error: Error Occurred");
+            }
+            console.log("The value of PI after reassignment attempt:" + PI);
+        }
+    </script>
+</body>
+</html>

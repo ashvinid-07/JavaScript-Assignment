@@ -1,0 +1,44 @@
+<!--Explore the properties of JavaScript numbers by creating a program that 
+demonstrates Number.MAX_VALUE, Number.MIN_VALUE, and Number.NaN.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Numbers Properties</title>
+</head>
+<body>
+  <h1>JavaScript Number Properties</h1>
+  <div id="output"></div>
+
+  <script>
+    // Get the output element
+    let outputElement = document.getElementById("output");
+
+    // Demonstrate Number.MAX_VALUE
+    let maxValue = Number.MAX_VALUE;
+    outputElement.innerHTML += `
+      <p>Number.MAX_VALUE: ${maxValue}</p>
+      <p>Adding 1 to Number.MAX_VALUE: ${maxValue + 1} (overflow)</p>
+    `;
+
+    // Demonstrate Number.MIN_VALUE
+    let minValue = Number.MIN_VALUE;
+    outputElement.innerHTML += `
+      <p>Number.MIN_VALUE: ${minValue}</p>
+      <p>Subtracting 1 from Number.MIN_VALUE: ${minValue - 1} (underflow)</p>
+    `;
+
+    // Demonstrate Number.NaN
+    let nanValue = Number.NaN;
+    outputElement.innerHTML += `
+      <p>Number.NaN: ${nanValue}</p>
+      <p>Checking if a value is NaN: ${isNaN(nanValue)} (true)</p>
+    `;
+
+    // Demonstrate the effects of arithmetic operations on NaN
+    outputElement.innerHTML += `
+      <p>Adding 1 to NaN: ${nanValue + 1} (still NaN)</p>
+      <p>Multiplying NaN by 2: ${nanValue * 2} (still NaN)</p>
+    `;
+  </script>
+</body>
+</html>

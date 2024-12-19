@@ -1,0 +1,82 @@
+<!--Implement a JavaScript class representing a simple object, such as a Car or Person. Include properties, a constructor, and methods (like start(), stop(), greet()). Demonstrate inheritance by extending the class.
+Deliverable: Provide a program that creates instances of the class and demonstrates method inheritance and property access.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Classes</title>
+</head>
+<body>
+    <h1>JavaScript Class Demo</h1>
+    <p id="result"></p>
+    <script>
+        // Get the result element
+        let result = document.getElementById("result");
+        
+        // Define the Car class
+        class Car {
+          constructor(brand, model, year) {
+            this.brand = brand;
+            this.model = model;
+            this.year = year;
+            this.isRunning = false;
+          }
+        
+          start() {
+            this.isRunning = true;
+            result.innerHTML += `The ${this.year} ${this.brand} ${this.model} is started.<br>`;
+          }
+        
+          stop() {
+            this.isRunning = false;
+            result.innerHTML += `The ${this.year} ${this.brand} ${this.model} is stopped.<br>`;
+          }
+        }
+        
+        // Define the ElectricCar class, extending the Car class
+        class ElectricCar extends Car {
+          constructor(brand, model, year, batteryCapacity) {
+            super(brand, model, year);
+            this.batteryCapacity = batteryCapacity;
+          }
+        
+          charge() {
+            result.innerHTML += `The ${this.year} ${this.brand} ${this.model} is charging its ${this.batteryCapacity} kWh battery.<br>`;
+          }
+        }
+        
+        // Create instances of the Car and ElectricCar classes
+        let myCar = new Car("Toyota", "Corolla", 2015);
+        let myElectricCar = new ElectricCar("Tesla", "Model 3", 2020, 75);
+        
+        // Demonstrate method inheritance and property access
+        myCar.start();
+        myCar.stop();
+        result.innerHTML += `My car is a ${myCar.year} ${myCar.brand} ${myCar.model}.<br>`;
+        
+        myElectricCar.start();
+        myElectricCar.charge();
+        myElectricCar.stop();
+        result.innerHTML += `My electric car is a ${myElectricCar.year} ${myElectricCar.brand} ${myElectricCar.model} with a ${myElectricCar.batteryCapacity} kWh battery.<br>`;
+        
+        // Define the Person class
+        class Person {
+          constructor(name, age) {
+            this.name = name;
+            this.age = age;
+          }
+        
+          greet() {
+            result.innerHTML += `Hello, my name is ${this.name} and I am ${this.age} years old.<br>`;
+          }
+        }
+        
+        // Create an instance of the Person class
+        let person = new Person("John Doe", 30);
+        
+        // Demonstrate method inheritance and property access
+        person.greet();
+        result.innerHTML += `My name is ${person.name} and I am ${person.age} years old.<br>`;</script>
+</body>
+</html>

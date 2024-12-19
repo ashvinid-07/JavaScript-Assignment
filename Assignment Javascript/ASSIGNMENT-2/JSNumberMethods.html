@@ -1,0 +1,53 @@
+<!--Write a function that takes a decimal number and rounds it to the nearest whole number using the 
+.Math.round() method. Also, demonstrate .Math.ceil() and .Math.floor().-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Numbers Methods</title>
+</head>
+<body>
+  <h1>Rounding Numbers</h1>
+  <input id="input-number" type="number" placeholder="Enter a decimal number">
+  <button id="round-button">Round to Nearest Whole Number</button>
+  <div id="output"></div>
+
+  <script>
+    // Get the input field, button, and output element
+    let inputField = document.getElementById("input-number");
+    let roundButton = document.getElementById("round-button");
+    let outputElement = document.getElementById("output");
+
+    // Function to round a decimal number to the nearest whole number
+    function roundNumber(num) {
+      return Math.round(num);
+    }
+
+    // Function to demonstrate Math.ceil() and Math.floor()
+    function demonstrateRoundingFunctions(num) {
+      let rounded = Math.round(num);
+      let ceiled = Math.ceil(num);
+      let floored = Math.floor(num);
+
+      return `Rounded: ${rounded}, Ceiled: ${ceiled}, Floored: ${floored}`;
+    }
+
+    // Add an event listener to the button
+    roundButton.addEventListener("click", function() {
+      // Get the input number
+      let inputNum = parseFloat(inputField.value);
+
+      // Round the number to the nearest whole number
+      let roundedNum = roundNumber(inputNum);
+
+      // Demonstrate Math.ceil() and Math.floor()
+      let demonstration = demonstrateRoundingFunctions(inputNum);
+
+      // Display the results
+      outputElement.innerHTML = `
+        <p>Rounded to nearest whole number: ${roundedNum}</p>
+        <p>Demonstration of Math.ceil() and Math.floor(): ${demonstration}</p>
+      `;
+    });
+  </script>
+</body>
+</html>

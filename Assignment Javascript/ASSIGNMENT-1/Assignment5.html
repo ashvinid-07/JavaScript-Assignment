@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Syntax</title>
+</head>
+<body>
+    <h1>JavaScript Syntax</h1>
+    <button onclick="startProgram()">Run Program</button>
+    <script>
+        let userName = "Ashvini"; // Correct variable declaration with 'let'
+        const age = 24; // A constant variable using 'const'
+        // Function Defination
+        function User(){
+            console.log("Hello, " + userName + "! You are " + age + " years old.")
+        }
+        // Control Structure (if-else)
+        function checkAge(){
+            if(age >= 18){
+                console.log(userName + " is an adult.");
+            }
+            else{
+                console.log(userName + " is an minor.");
+            }
+        }
+        // Loop Structure (for Loop)
+        function countToFive(){
+            for(let i = 1; i <= 5; i++){
+                console.log("Count : " + i);
+            }
+        }
+        // Function that calls the other functions
+        function startProgram(){
+            User(); //Calls the function to the user
+            checkAge(); // Calls the function to check the user's age
+            countToFive(); // Calls the function to count from 1 to 5
+        }
+    </script>
+</body>
+</html>

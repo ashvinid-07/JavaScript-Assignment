@@ -1,0 +1,38 @@
+<!--Write a function that checks if a number is positive, negative, or zero, and returns a boolean for each case.
+Create a program that uses boolean expressions to evaluate whether a person is eligible to vote (age 18 or older).-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Booleans</title>
+</head>
+<body>
+    <h1>Boolean Expressions Example</h1>
+    <script>
+      // Function to check if a number is positive, negative, or zero
+      function checkNumberType(number) {
+        let isPositive = number > 0;
+        let isNegative = number < 0;
+        let isZero = number === 0;
+        return { isPositive, isNegative, isZero };
+      }
+  
+      // Get the person's age
+      let age = 25;
+  
+      // Check if the person is eligible to vote
+      let isEligibleToVote = age >= 18;
+  
+      // Log the result
+      console.log(`Is eligible to vote: ${isEligibleToVote}`);
+  
+      // Example usage of the checkNumberType function
+      let number = 10;
+      let result = checkNumberType(number);
+      console.log(`Is ${number} positive: ${result.isPositive}`);
+      console.log(`Is ${number} negative: ${result.isNegative}`);
+      console.log(`Is ${number} zero: ${result.isZero}`);
+    </script>
+</body>
+</html>

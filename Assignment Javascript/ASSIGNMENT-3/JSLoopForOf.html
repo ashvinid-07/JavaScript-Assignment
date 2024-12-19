@@ -1,0 +1,43 @@
+<!--Write a program that iterates through an array of numbers and logs each number multiplied by 2.
+Create a function that accepts an iterable (like an array or string) and returns an array of its elements.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Loop For Of</title>
+</head>
+<body>
+    <h1>Array Multiplication and Iterable Conversion</h1>
+  <script>
+    // Create an array of numbers
+    let number = [1, 2, 3, 4, 5];
+
+    // Iterate through the array and log each number multiplied by 2
+    for (let number of numbers) {
+      console.log(number * 2);
+    }
+
+    // Function to convert an iterable to an array
+    function iterableToArray(iterable) {
+      let array = [];
+      for (let element of iterable) {
+        array.push(element);
+      }
+      return array;
+    }
+
+    // Create an array and a string
+    let numbers = [1, 2, 3, 4, 5];
+    let greeting = "hello";
+
+    // Call the function to convert the array and string to arrays
+    let numbersArray = iterableToArray(numbers);
+    let greetingArray = iterableToArray(greeting);
+
+    // Log the results
+    console.log(`Numbers array: ${numbersArray}`);
+    console.log(`Greeting array: ${greetingArray}`);
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!--Create a Set from an array of numbers and log its size.
+Write a program that adds and removes elements from a Set and logs the results.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Sets</title>
+</head>
+<body>
+    <h1>Set Example</h1>
+  <script>
+    // Create an array of numbers
+    let numbers = [1, 2, 2, 3, 4, 4, 5];
+
+    // Create a Set from the array of numbers
+    let numberSet = new Set(numbers);
+
+    // Log the size of the Set
+    console.log(`Size of the Set: ${numberSet.size}`);
+
+    // Create a Set
+    let mySet = new Set();
+
+    // Add elements to the Set
+    mySet.add(1);
+    mySet.add(2);
+    mySet.add(3);
+
+    // Log the size of the Set
+    console.log(`Size of the Set: ${mySet.size}`);
+
+    // Remove an element from the Set
+    mySet.delete(2);
+
+    // Log the size of the Set
+    console.log(`Size of the Set after deletion: ${mySet.size}`);
+
+    // Check if an element is in the Set
+    console.log(`Is 3 in the Set? ${mySet.has(3)}`);
+
+    // Clear the Set
+    mySet.clear();
+
+    // Log the size of the Set
+    console.log(`Size of the Set after clearing: ${mySet.size}`);
+  </script>
+</body>
+</html>

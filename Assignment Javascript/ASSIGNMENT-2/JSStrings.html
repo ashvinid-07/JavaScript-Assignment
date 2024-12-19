@@ -1,0 +1,47 @@
+<!-- Write a function that takes a string input and returns the string reversed. 
+ Use various string methods to manipulate the input.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Strings</title>
+</head>
+<body>
+  <h1>String Reversal</h1>
+  <input id="input-string" type="text" placeholder="Enter a string">
+  <button id="reverse-button">Reverse String</button>
+  <div id="output"></div>
+
+  <script>
+        // Get the input field, button, and output element
+        let inputField = document.getElementById("input-string");
+        let reverseButton = document.getElementById("reverse-button");
+        let outputElement = document.getElementById("output");
+
+        // Function to reverse the string
+            function reverseString(str) {
+            // Use the split() method to split the string into an array of characters
+            let charArray = str.split("");
+
+            // Use the reverse() method to reverse the order of the characters in the array
+            charArray = charArray.reverse();
+
+            // Use the join() method to join the characters back into a string
+            let reversedStr = charArray.join("");
+
+            return reversedStr;
+        }
+
+        // Add an event listener to the button
+        reverseButton.addEventListener("click", function() {
+            // Get the input string
+            let inputStr = inputField.value;
+
+            // Reverse the string
+            let reversedStr = reverseString(inputStr);
+
+            // Display the reversed string
+            outputElement.innerHTML = `Reversed string: ${reversedStr}`;
+        });
+  </script>
+</body>
+</html>

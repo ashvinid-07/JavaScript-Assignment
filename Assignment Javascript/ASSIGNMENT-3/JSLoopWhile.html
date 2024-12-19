@@ -1,0 +1,38 @@
+<!--Write a program that uses a while loop to print numbers from 1 to 10.
+Create a function that repeatedly asks the user for input until they enter "stop".-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Loop While</title>
+</head>
+<body>
+    <h1>While Loop and User Input</h1>
+    <script>
+      // Initialize a counter variable
+      let counter = 1;
+  
+      // Use a while loop to print numbers from 1 to 10
+      while (counter <= 10) {
+        console.log(counter);
+        counter++;
+      }
+  
+      // Function to repeatedly ask the user for input until they enter "stop"
+      function askUserForInput() {
+        let userInput;
+        while (true) {
+          userInput = prompt("Please enter something (or 'stop' to quit): ");
+          if (userInput.toLowerCase() === "stop") {
+            break;
+          }
+          console.log(`You entered: ${userInput}`);
+        }
+      }
+  
+      // Call the function to start asking the user for input
+      askUserForInput();
+    </script>
+</body>
+</html>

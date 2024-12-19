@@ -1,0 +1,56 @@
+<!--Create a custom iterable object and implement the [Symbol.iterator] method.
+Write a function that takes an iterable and returns an array of its elements.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Iterables</title>
+</head>
+<body>
+    <h1>Custom Iterable and Iterable to Array</h1>
+  <script>
+    // Create a custom iterable object
+    class CustomIterable {
+      constructor(data) {
+        this.data = data;
+      }
+
+      *[Symbol.iterator]() {
+        for (let i = 0; i < this.data.length; i++) {
+          yield this.data[i];
+        }
+      }
+    }
+
+    // Create an instance of the custom iterable object
+    let customIterable = new CustomIterable([1, 2, 3, 4, 5]);
+
+    // Use a for...of loop to iterate over the custom iterable object
+    for (let value of customIterable) {
+      console.log(value);
+    }
+
+    // Function to convert an iterable to an array
+    function iterableToArray(iterable) {
+      let array = [];
+      for (let value of iterable) {
+        array.push(value);
+      }
+      return array;
+    }
+
+    // Create an array and a string
+    let numbers = [1, 2, 3, 4, 5];
+    let greeting = "hello";
+
+    // Call the function to convert the array and string to arrays
+    let numbersArray = iterableToArray(numbers);
+    let greetingArray = iterableToArray(greeting);
+
+    // Log the results
+    console.log(`Numbers array: ${numbersArray}`);
+    console.log(`Greeting array: ${greetingArray}`);
+  </script>
+</body>
+</html>

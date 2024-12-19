@@ -1,0 +1,60 @@
+<!--Write a program that takes a day number (1-7) and returns the corresponding day of the week.
+Create a function that evaluates a simple expression (like a small calculator) using a switch statement.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Switch</title>
+</head>
+<body>
+    <h1>Day of the Week and Expression Evaluator</h1>
+  <script>
+    // Function to convert a day number to a day of the week
+    function convertDayNumberToDay(dayNumber) {
+      if (dayNumber < 1 || dayNumber > 7) {
+        return "Invalid day number";
+      }
+      let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      return daysOfWeek[dayNumber - 1];
+    }
+
+    // Function to evaluate a simple expression
+    function evaluateExpression(expression) {
+      let operator = expression[0];
+      let operand1 = parseInt(expression[1]);
+      let operand2 = parseInt(expression[3]);
+      switch (operator) {
+        case "+":
+          return operand1 + operand2;
+        case "-":
+          return operand1 - operand2;
+        case "*":
+          return operand1 * operand2;
+        case "/":
+          return operand1 / operand2;
+        default:
+          return "Invalid operator";
+      }
+    }
+
+    // Get the day number from the user
+    let dayNumber = 3;
+
+    // Convert the day number to a day of the week
+    let dayOfWeek = convertDayNumberToDay(dayNumber);
+
+    // Log the result
+    console.log(`Day Number: ${dayNumber}, Day of the Week: ${dayOfWeek}`);
+
+    // Get the expression from the user
+    let expression = "+ 10 20";
+
+    // Evaluate the expression
+    let result = evaluateExpression(expression.split(" "));
+
+    // Log the result
+    console.log(`Expression: ${expression}, Result: ${result}`);
+  </script>
+</body>
+</html>

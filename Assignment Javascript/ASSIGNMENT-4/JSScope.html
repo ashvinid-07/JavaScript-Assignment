@@ -1,0 +1,52 @@
+<!--Write a JavaScript program that demonstrates the difference between global, local, and block scope. 
+Create variables in all three scopes and explain their accessibility in different parts of the program.
+Deliverable: Provide detailed comments explaining the scope of each variable and when it becomes inaccessible.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Scope</title>
+</head>
+<body>
+    <h1>Scope Demo</h1>
+    <p id="result"></p>
+    <script>
+        // Get the result element
+        let result = document.getElementById("result");
+
+        // Global Scope
+        var globalVar = "Global Variable";
+
+        result.innerHTML += "Global Scope: " + globalVar + "<br>";
+
+        // Function Scope (Local Scope)
+        function myFunction() {
+        var localVar = "Local Variable";
+        result.innerHTML += "Local Scope: " + localVar + "<br>";
+
+        // Block Scope (inside if statement)
+        if (true) {
+            let blockVar = "Block Variable";
+            result.innerHTML += "Block Scope: " + blockVar + "<br>";
+        }
+
+        // Trying to access blockVar outside its scope
+        try {
+            result.innerHTML += "Accessing blockVar outside its scope: " + blockVar + "<br>";
+        } catch (error) {
+            result.innerHTML += "Error: blockVar is not accessible outside its scope.<br>";
+        }
+        }
+
+        myFunction();
+
+        // Trying to access localVar outside its scope
+        try {
+        result.innerHTML += "Accessing localVar outside its scope: " + localVar + "<br>";
+        } catch (error) {
+        result.innerHTML += "Error: localVar is not accessible outside its scope.<br>";
+        }
+    </script>
+</body>
+</html>

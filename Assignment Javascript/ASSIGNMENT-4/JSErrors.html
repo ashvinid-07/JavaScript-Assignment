@@ -1,0 +1,59 @@
+<!--reate a JavaScript file that generates three types of errors: SyntaxError, ReferenceError, and TypeError. 
+Then, implement a try-catch block to handle these errors gracefully. Provide an explanation of each error and 
+how they occur.Deliverable: Include examples of handled and unhandled errors with appropriate comments.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Errors</title>
+</head>
+<body>
+    <h1>Error Handling Demo</h1>
+    <p id="result"></p>
+    <script>
+        // Get the result element
+        let result = document.getElementById("result");
+
+        // Example 1: SyntaxError
+        try {
+        // This will throw a SyntaxError because of the invalid syntax
+        eval("if (true { console.log('Hello'); }");
+        } catch (error) {
+        result.innerHTML += "SyntaxError: " + error.message + "<br>";
+        }
+
+        // Example 2: ReferenceError
+        try {
+        // This will throw a ReferenceError because 'undefinedVar' is not defined
+        console.log(undefinedVar);
+        } catch (error) {
+        result.innerHTML += "ReferenceError: " + error.message + "<br>";
+        }
+
+        // Example 3: TypeError
+        try {
+        // This will throw a TypeError because 'null' cannot be called as a function
+        null();
+        } catch (error) {
+        result.innerHTML += "TypeError: " + error.message + "<br>";
+        }
+
+        // Unhandled Error Example
+        // This will throw an unhandled ReferenceError because 'anotherUndefinedVar' is not defined
+        console.log(anotherUndefinedVar);
+
+        // Try-Catch Block to Handle Errors
+        try {
+        // Code that may throw errors
+        console.log(undefinedVar);
+        } catch (error) {
+        // Handle the error
+        result.innerHTML += "Handled Error: " + error.message + "<br>";
+        } finally {
+        // This code will always run, regardless of whether an error was thrown
+        result.innerHTML += "Finally block executed.<br>";
+        }
+    </script>
+</body>
+</html>

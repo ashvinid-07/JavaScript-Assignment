@@ -1,0 +1,29 @@
+<!--Create a JavaScript program that initializes a new Date object and logs the current date and time to 
+the console.Write a function that takes a date string as input and returns the corresponding Date object.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Dates</title>
+</head>
+<body>
+    <h1>Date Object Example</h1>
+  <script>
+    // Get the current date and time
+    let currentDate = new Date();
+    console.log(`Current date and time: ${currentDate}`);
+
+    // Function to create a Date object from a date string
+    function createDateObject(dateString) {
+      let dateObject = new Date(dateString);
+      return dateObject;
+    }
+
+    // Example usage
+    let dateString = "2024-07-25T14:30:00.000Z";
+    let dateObject = createDateObject(dateString);
+    console.log(`Date object: ${dateObject}`);
+  </script>
+</body>
+</html>
